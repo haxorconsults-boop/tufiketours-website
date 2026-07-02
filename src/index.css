@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Lordstown-inspired palette */
+  --primary: #4b0e69;
+  --primary-light: #6b2d8b;
+  --primary-dark: #3a0a52;
+  --accent: #ed8323;
+  --accent-light: #f5a54e;
+  --accent-dark: #d4701a;
+  --white: #ffffff;
+  --off-white: #f8f9fa;
+  --light-gray: #e9ecef;
+  --text-dark: #1a1a2e;
+  --text-body: #4a4a5a;
+  --text-muted: #6c757d;
+  --bg-dark: #0f0a1a;
+  --bg-card: rgba(75, 14, 105, 0.06);
+
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(75, 14, 105, 0.08);
+  --shadow-lg: 0 12px 48px rgba(75, 14, 105, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-dark);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(237, 131, 35, 0.3);
+}
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(237, 131, 35, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.btn-purple {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(75, 14, 105, 0.3);
+}
+.btn-purple:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+/* ===== SECTION STYLES ===== */
+.section {
+  padding: 100px 0;
+}
+.section-purple {
+  background: var(--primary);
+  color: var(--white);
+}
+.section-purple h2,
+.section-purple h3,
+.section-purple p {
+  color: var(--white);
+}
+.section-gray {
+  background: var(--off-white);
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+.section-subtitle.light {
+  color: rgba(255,255,255,0.8);
+}
+.accent-text {
+  color: var(--accent);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  .container {
+    padding: 0 16px;
+  }
+}
