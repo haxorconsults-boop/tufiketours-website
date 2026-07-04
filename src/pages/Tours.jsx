@@ -7,19 +7,19 @@ const Tours = () => {
   const tours = [
     {
       title: "Safari Adventures",
-      image: "/safari.jpg",
+      image: "./safari.jpg",
       description: "Wildlife safaris within Kenya and other African destinations.",
       tags: ["Wildlife", "Camping", "Photography"]
     },
     {
       title: "Coastal Escapes",
-      image: "/beach.jpg",
+      image: "./beach.jpg",
       description: "Relaxing getaways to pristine beaches and luxury resorts.",
       tags: ["Beach", "Relaxation", "Family"]
     },
     {
       title: "Mountain Hiking",
-      image: "/mountain.jpg",
+      image: "./mountain.jpg",
       description: "Thrilling climbs and nature hikes for the adventurous soul.",
       tags: ["Adventure", "Hiking", "Nature"]
     }

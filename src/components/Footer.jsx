@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/">
-              <img src="/logo.jpg" alt="Tufike Logo" className="footer-logo" />
+              <img src="./logo.jpg" alt="Tufike Logo" className="footer-logo" />
             </Link>
             <p className="footer-desc">
               Your premier corporate travel and ticketing partner in Kenya. Experience the wild heart of Africa with our curated safaris, and rely on our expertise for seamless corporate journeys.

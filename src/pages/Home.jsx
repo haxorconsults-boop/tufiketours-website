@@ -9,7 +9,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-bg">
-          <img src="/hero.jpg" alt="Savanna Safari" className="hero-img" />
+          <img src="./hero.jpg" alt="Savanna Safari" className="hero-img" />
           <div className="hero-overlay"></div>
         </div>
         <div className="container hero-content animate-fade-up">
@@ -55,7 +55,7 @@ const Home = () => {
             </div>
             
             <div className="intro-images">
-              <img src="/safari.jpg" alt="Safari Jeep" className="intro-img-main" />
+              <img src="./safari.jpg" alt="Safari Jeep" className="intro-img-main" />
               <div className="intro-stats glass-card">
                 <div className="stat">
                   <span className="stat-num">15+</span>

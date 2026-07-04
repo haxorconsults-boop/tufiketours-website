@@ -25,7 +25,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="brand">
-          <img src="/logo.jpg" alt="Tufike Logo" className="brand-logo" />
+          <img src="./logo.jpg" alt="Tufike Logo" className="brand-logo" />
         </Link>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
