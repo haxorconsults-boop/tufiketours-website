@@ -13,16 +13,16 @@ const Home = () => {
           <div className="hero-overlay"></div>
         </div>
         <div className="container hero-content animate-fade-up">
-          <h1>Experience the Wild Heart of Africa</h1>
+          <h1>Your Destination is Your Priority</h1>
           <p>
-            Your premier travel management partner for corporate, group, and individual holidays.
+            Experience the wild heart of Africa with curated local trips, group expeditions, and comprehensive travel support across East Africa.
           </p>
           <div className="hero-actions">
-            <Link to="/tours" className="btn btn-primary">
-              Explore Packages <ArrowRight size={20} />
+            <Link to="/services" className="btn btn-primary">
+              Explore Our Services <ArrowRight size={20} />
             </Link>
-            <Link to="/contact" className="btn btn-outline">
-              Contact Us
+            <Link to="/marketplace" className="btn btn-outline">
+              Visit Marketplace
             </Link>
           </div>
         </div>
@@ -35,20 +35,20 @@ const Home = () => {
             <div className="intro-text">
               <h2 className="section-title">Welcome to <span className="accent-text">Tufike</span></h2>
               <p className="intro-lead">
-                We are leaders of multi-national travel management in the region and our clients' best partner.
+                We are an East African travel and experiences company specializing in local adventures, curated group trips, camping experiences, accommodation facilitation, mobility services, merchandise, and travel support solutions.
               </p>
               
               <div className="mv-blocks">
                 <div className="mv-block">
                   <h3>Our Mission</h3>
                   <p>
-                    Tufike Tours & Travels is committed to providing our clients with exceptional service, a complete end-to-end booking solution covering all aspects of your travel needs tailored in-house at an affordable price with pro-active customer service.
+                    Our mission is to make travel accessible, memorable, and personalized while promoting local tourism and adventure culture across Kenya and East Africa.
                   </p>
                 </div>
                 <div className="mv-block">
-                  <h3>Our Vision</h3>
+                  <h3>Brand Promise</h3>
                   <p>
-                    To be leaders of multi-national travel management in the region and our clients' best partner, always providing the best possible product, with the highest quality of services, and demonstrating faithfully our commitment towards social and environmental responsibility.
+                    At Tufike, we don't simply take you somewhere. We make every destination feel like it was designed specifically for you.
                   </p>
                 </div>
               </div>
@@ -84,19 +84,23 @@ const Home = () => {
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon"><Globe size={32} /></div>
-              <h3>Safaris & Tours</h3>
-              <p>Wildlife safaris within Kenya and other African destinations. Tailor-made adventure packages and private camping.</p>
+              <h3>Local Trips & Expeditions</h3>
+              <p>Day trips, weekend getaways, multi-day expeditions, and corporate retreats across Kenya and East Africa.</p>
             </div>
             <div className="service-card">
               <div className="service-icon"><Shield size={32} /></div>
-              <h3>Corporate Travel</h3>
-              <p>Top notch corporate & government travel services. Reliable, efficient, and tailored to your organization's needs.</p>
+              <h3>Shared Group Tickets</h3>
+              <p>Affordable, verified shared group trips through the Tufike Marketplace. Travel together and save.</p>
             </div>
             <div className="service-card">
               <div className="service-icon"><CheckCircle size={32} /></div>
-              <h3>Car Hire</h3>
-              <p>Flexible car rental and hire services dependent entirely on your needs, including day disposals with excursions.</p>
+              <h3>Airbnb Facilitation</h3>
+              <p>Finding and booking verified Airbnb accommodations with verified hosts and secure payments.</p>
             </div>
+          </div>
+          
+          <div className="text-center" style={{ marginTop: '3rem' }}>
+             <Link to="/services" className="btn btn-outline">View All 10 Core Services</Link>
           </div>
         </div>
       </section>

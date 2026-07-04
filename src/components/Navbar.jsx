@@ -30,7 +30,10 @@ const Navbar = () => {
 
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
           <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-          <Link to="/tours" className={`nav-link ${location.pathname === '/tours' ? 'active' : ''}`}>Safaris & Tours</Link>
+          <Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}>Services</Link>
+          <Link to="/tours" className={`nav-link ${location.pathname === '/tours' ? 'active' : ''}`}>Tours</Link>
+          <Link to="/marketplace" className={`nav-link ${location.pathname === '/marketplace' ? 'active' : ''}`}>Marketplace</Link>
+          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
           <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
           <a href="tel:+254718804650" className="btn btn-primary nav-btn">
             <Phone size={18} /> Call Us

@@ -53,11 +53,16 @@ const Contact = () => {
                 <div className="info-card">
                   <div className="info-icon"><Clock /></div>
                   <div>
-                    <h4>Business Hours</h4>
-                    <p>Monday - Friday: 8am - 6pm</p>
-                    <p>Saturday: 9am - 1pm</p>
+                    <h4>Response Times</h4>
+                    <p><strong>Phone:</strong> Immediate</p>
+                    <p><strong>WhatsApp:</strong> Under 15 minutes</p>
+                    <p><strong>Email:</strong> Under 2 hours</p>
                   </div>
                 </div>
+              </div>
+              
+              <div className="escalation-note" style={{marginTop: '2rem', fontSize: '0.9rem', color: 'var(--text-light)'}}>
+                <p><strong>Escalation Path:</strong> Agent &rarr; Team Leader &rarr; Operations Manager</p>
               </div>
             </div>
 
@@ -77,10 +82,12 @@ const Contact = () => {
                 <div className="form-group">
                   <label htmlFor="service">Interested Service</label>
                   <select id="service">
-                    <option>Safaris & Tours</option>
-                    <option>Corporate Travel</option>
-                    <option>Car Hire</option>
-                    <option>Other</option>
+                    <option>Local Trips & Expeditions</option>
+                    <option>Shared Group Trip Tickets</option>
+                    <option>Airbnb Facilitation</option>
+                    <option>Camping Experiences</option>
+                    <option>Merchandise Order</option>
+                    <option>Other Service</option>
                   </select>
                 </div>
                 
