@@ -1,106 +1,107 @@
-.marketplace-page .page-header {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  color: white;
-  padding: 6rem 0 4rem;
+.marketplace-page {
+  padding-top: 120px;
+  background: var(--dark);
+  min-height: 100vh;
+}
+.market-header {
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 5%;
+}
+.market-subtitle {
+  font-family: var(--font-accent);
+  font-size: 1.3rem;
+  color: var(--cream-dark);
+  margin-top: 1.5rem;
 }
 
-.marketplace-page .page-subtitle {
-  max-width: 600px;
-  margin: 1rem auto 0;
-  opacity: 0.9;
-  font-size: 1.1rem;
+.market-section {
+  padding: 2rem 5% 5rem;
+}
+.market-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--earth);
+  border: 1px solid rgba(200,151,58,.15);
+  border-radius: 4px;
+  padding: 4rem;
+}
+.market-card.border-gold {
+  border-color: rgba(200,151,58,.4);
+  box-shadow: 0 10px 40px rgba(0,0,0,.3);
 }
 
-.marketplace-section {
-  padding: 3rem;
-  border-radius: 1.5rem;
+.mc-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.mc-header h3 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem; color: var(--gold);
+  margin-bottom: 1rem;
+}
+.mc-header p {
+  color: var(--cream); font-size: 1.05rem;
+  max-width: 600px; margin: 0 auto; line-height: 1.6;
 }
 
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.section-icon {
-  color: var(--secondary-color);
-  background: rgba(237, 131, 35, 0.1);
-  padding: 1rem;
-  border-radius: 1rem;
-  width: 70px;
-  height: 70px;
-}
-
-.section-header h2 {
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.ticket-features {
+.mc-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 4rem;
 }
-
-.feature-item {
+.mc-feature {
   text-align: center;
 }
-
-.feature-item h4 {
-  color: var(--primary-color);
-  margin: 1rem 0 0.5rem;
+.mc-icon {
+  font-size: 2.5rem; margin-bottom: 1rem; display: block;
 }
-
-.feature-item p {
-  color: var(--text-light);
-  font-size: 0.95rem;
+.mc-feature h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem; color: var(--white);
+  margin-bottom: .8rem;
 }
-
-.cta-box {
-  background: rgba(75, 14, 105, 0.05);
-  padding: 2rem;
-  border-radius: 1rem;
-  border: 1px dashed var(--primary-color);
+.mc-feature p {
+  font-size: .85rem; color: var(--cream-dark); line-height: 1.6;
 }
 
 .merch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
-
 .merch-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  background: white;
-  border-radius: 0.5rem;
-  border: 1px solid rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: rgba(200,151,58,.04);
+  border: 1px solid rgba(200,151,58,.1);
+  border-radius: 4px;
+  transition: transform .3s, border-color .3s, background .3s;
 }
-
 .merch-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  background: rgba(200,151,58,.08);
 }
-
 .merch-name {
-  font-weight: 500;
-  color: var(--text-color);
+  font-family: var(--font-body); font-weight: 500;
+  color: var(--white); font-size: .95rem;
 }
-
 .merch-price {
-  font-weight: 700;
-  color: var(--secondary-color);
+  font-family: var(--font-heading); font-weight: 700;
+  color: var(--gold); font-size: 1.1rem;
 }
 
-.mt-4 {
-  margin-top: 1.5rem;
+.mc-cta {
+  border-top: 1px solid rgba(200,151,58,.15);
+  padding-top: 3rem;
+}
+.text-center { text-align: center; }
+
+@media (max-width: 900px) {
+  .mc-features { grid-template-columns: 1fr; gap: 2rem; }
+  .market-card { padding: 2.5rem 1.5rem; }
 }

@@ -1,119 +1,149 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Globe, Shield } from 'lucide-react';
 import './Home.css';
 
 const Home = () => {
+  const [currentTesti, setCurrentTesti] = useState(0);
+
+  const testimonials = [
+    {
+      text: "Our Masai Mara experience was nothing short of transcendent. The guides at Tufike knew exactly where the lions would be at dawn. A journey I will carry in my heart for the rest of my life.",
+      author: "Sarah & James Whitmore",
+      location: "London, United Kingdom — Masai Mara Safari 2024"
+    },
+    {
+      text: "We saw all the Big Five on day two. Day two! The planning was flawless, the camps were luxurious, and the team treated us like family. Tufike is simply the best in East Africa.",
+      author: "Dr. Aisha Nkemdirim",
+      location: "Lagos, Nigeria — Ultimate East Africa Package 2024"
+    },
+    {
+      text: "The photography safari exceeded every expectation. Our guide had an extraordinary eye for light and wildlife. I came home with images I never imagined possible. Book with Tufike — you will not regret it.",
+      author: "Marco & Elena Ferrucci",
+      location: "Milan, Italy — Photography Safari 2023"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTesti((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="home-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-bg">
-          <img src="./hero.jpg" alt="Savanna Safari" className="hero-img" />
-          <div className="hero-overlay"></div>
-        </div>
-        <div className="container hero-content animate-fade-up">
-          <h1>Your Destination is Your Priority</h1>
-          <p>
-            Experience the wild heart of Africa with curated local trips, group expeditions, and comprehensive travel support across East Africa.
-          </p>
-          <div className="hero-actions">
-            <Link to="/services" className="btn btn-primary">
-              Explore Our Services <ArrowRight size={20} />
-            </Link>
-            <Link to="/marketplace" className="btn btn-outline">
-              Visit Marketplace
-            </Link>
+    <div className="home-container">
+      {/* ── HERO ── */}
+      <section id="hero">
+        <div className="hero-bg"></div>
+        <div className="hero-content">
+          <div className="hero-badge">Africa's Premier Safari Specialists</div>
+          <h1 className="hero-title">Your Destination<br />is Our <em>Priority</em></h1>
+          <p className="hero-sub">Discover the untamed beauty of East Africa with Tufike Tours & Travels — crafting extraordinary safari journeys since 2010</p>
+          <div className="hero-btns">
+            <Link to="/services" className="btn-primary hover-target">Explore Services</Link>
+            <Link to="/contact" className="btn-outline hover-target">Plan My Trip</Link>
           </div>
         </div>
+        <div className="hero-scroll">Scroll <span></span></div>
       </section>
 
-      {/* Intro Section with Mission & Vision */}
-      <section className="section intro-section">
-        <div className="container">
-          <div className="intro-grid">
-            <div className="intro-text">
-              <h2 className="section-title">Welcome to <span className="accent-text">Tufike</span></h2>
-              <p className="intro-lead">
-                We are an East African travel and experiences company specializing in local adventures, curated group trips, camping experiences, accommodation facilitation, mobility services, merchandise, and travel support solutions.
-              </p>
-              
-              <div className="mv-blocks">
-                <div className="mv-block">
-                  <h3>Our Mission</h3>
-                  <p>
-                    Our mission is to make travel accessible, memorable, and personalized while promoting local tourism and adventure culture across Kenya and East Africa.
-                  </p>
-                </div>
-                <div className="mv-block">
-                  <h3>Brand Promise</h3>
-                  <p>
-                    At Tufike, we don't simply take you somewhere. We make every destination feel like it was designed specifically for you.
-                  </p>
-                </div>
+      {/* ── STATS BAR ── */}
+      <div className="stats-bar">
+        <div className="stat-item">
+          <span className="stat-num">12+</span>
+          <span className="stat-label">Years of Excellence</span>
+        </div>
+        <div className="stat-item">
+          <span className="stat-num">5,000+</span>
+          <span className="stat-label">Happy Travelers</span>
+        </div>
+        <div className="stat-item">
+          <span className="stat-num">8</span>
+          <span className="stat-label">African Countries</span>
+        </div>
+        <div className="stat-item">
+          <span className="stat-num">10+</span>
+          <span className="stat-label">Core Services</span>
+        </div>
+        <div className="stat-item">
+          <span className="stat-num">98%</span>
+          <span className="stat-label">Client Satisfaction</span>
+        </div>
+      </div>
+
+      {/* ── WHY US ── */}
+      <section id="why-us">
+        <div className="why-grid">
+          <div className="why-items reveal">
+            <div>
+              <p className="section-label">Why Tufike</p>
+              <h2 className="section-title">Africa, The Right <em>Way</em></h2>
+              <br />
+            </div>
+            <div className="why-item">
+              <div className="why-num">01</div>
+              <div>
+                <h4>Native-Born Expertise</h4>
+                <p>Our team was born and raised across East Africa. This land isn't a destination for us — it's home. We share it with pride, depth, and genuine love.</p>
               </div>
             </div>
-            
-            <div className="intro-images">
-              <img src="./safari.jpg" alt="Safari Jeep" className="intro-img-main" />
-              <div className="intro-stats glass-card">
-                <div className="stat">
-                  <span className="stat-num">15+</span>
-                  <span className="stat-text">Years Exp.</span>
-                </div>
-                <div className="stat">
-                  <span className="stat-num">100%</span>
-                  <span className="stat-text">Satisfaction</span>
-                </div>
+            <div className="why-item">
+              <div className="why-num">02</div>
+              <div>
+                <h4>100% Tailor-Made Services</h4>
+                <p>From airport pickups to multi-day safaris, every itinerary is personally designed around your interests, pace, budget, and the experience you dream of.</p>
+              </div>
+            </div>
+            <div className="why-item">
+              <div className="why-num">03</div>
+              <div>
+                <h4>24/7 Support</h4>
+                <p>From the moment you land to your final farewell, our team is always reachable — in the field, at camp, or across borders.</p>
+              </div>
+            </div>
+            <div className="why-item">
+              <div className="why-num">04</div>
+              <div>
+                <h4>Responsible Tourism</h4>
+                <p>We invest 5% of every package into wildlife conservation and community programs, so your journey contributes to Africa's future.</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Services Overview */}
-      <section className="section section-gray services-section">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Our <span className="accent-text">Services</span></h2>
-            <p className="section-subtitle mx-auto">
-              Comprehensive travel solutions for every need, backed by our extensive partner network.
-            </p>
-          </div>
-          
-          <div className="services-grid">
-            <div className="service-card">
-              <div className="service-icon"><Globe size={32} /></div>
-              <h3>Local Trips & Expeditions</h3>
-              <p>Day trips, weekend getaways, multi-day expeditions, and corporate retreats across Kenya and East Africa.</p>
+          <div className="why-img reveal">
+            <img src="https://images.unsplash.com/photo-1551009175-15bdf9dcb580?w=800&q=80" alt="Safari experience" loading="lazy" />
+            <div className="why-img-tag">
+              Safari<br />Excellence<br />Award 2024
+              <small>East Africa Tourism Board</small>
             </div>
-            <div className="service-card">
-              <div className="service-icon"><Shield size={32} /></div>
-              <h3>Shared Group Tickets</h3>
-              <p>Affordable, verified shared group trips through the Tufike Marketplace. Travel together and save.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon"><CheckCircle size={32} /></div>
-              <h3>Airbnb Facilitation</h3>
-              <p>Finding and booking verified Airbnb accommodations with verified hosts and secure payments.</p>
-            </div>
-          </div>
-          
-          <div className="text-center" style={{ marginTop: '3rem' }}>
-             <Link to="/services" className="btn btn-outline">View All 10 Core Services</Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section section-purple cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2 className="section-title">Ready to start planning?</h2>
-            <p className="section-subtitle light mb-8">
-              Contact us today to tailor-make a package that suits your exact needs and interests.
-            </p>
-            <Link to="/contact" className="btn btn-primary">Get a Quote</Link>
+      {/* ── TESTIMONIALS ── */}
+      <section id="testimonials">
+        <div className="testi-header reveal">
+          <p className="section-label">Client Stories</p>
+          <h2 className="section-title">Words From the <em>Wild</em></h2>
+        </div>
+        <div className="testi-slider reveal">
+          {testimonials.map((testi, index) => (
+            <div key={index} className={`testi-card ${index === currentTesti ? 'active' : ''}`}>
+              <div className="testi-stars">★★★★★</div>
+              <p className="testi-text">"{testi.text}"</p>
+              <div className="testi-author">
+                <strong>{testi.author}</strong>
+                <span>{testi.location}</span>
+              </div>
+            </div>
+          ))}
+          <div className="testi-dots">
+            {testimonials.map((_, index) => (
+              <button 
+                key={index} 
+                className={`testi-dot hover-target ${index === currentTesti ? 'active' : ''}`} 
+                onClick={() => setCurrentTesti(index)}
+              />
+            ))}
           </div>
         </div>
       </section>

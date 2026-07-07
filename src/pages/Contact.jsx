@@ -1,109 +1,179 @@
-import React from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
-  return (
-    <div className="contact-page pt-32">
-      <div className="page-header section-purple">
-        <div className="container text-center">
-          <h1 className="section-title">Get in Touch</h1>
-          <p className="section-subtitle light mx-auto">
-            We'd love to hear from you. Let us plan your next great adventure.
-          </p>
-        </div>
-      </div>
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: 'safari',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
-      <section className="section">
-        <div className="container">
-          <div className="contact-grid">
-            <div className="contact-info animate-fade-up">
-              <h2>Contact Information</h2>
-              <p className="mb-8 text-muted">
-                Our consultant Peter Muiruru is ready to assist you with any inquiries or booking requests.
-              </p>
-              
-              <div className="info-cards">
-                <div className="info-card">
-                  <div className="info-icon"><Phone /></div>
-                  <div>
-                    <h4>Phone</h4>
-                    <p>+254 718 804 650</p>
-                    <p className="text-sm">Consultant: Peter Muiruru</p>
-                  </div>
-                </div>
-                
-                <div className="info-card">
-                  <div className="info-icon"><Mail /></div>
-                  <div>
-                    <h4>Email</h4>
-                    <a href="mailto:tufiketours@gmail.com">tufiketours@gmail.com</a>
-                  </div>
-                </div>
-                
-                <div className="info-card">
-                  <div className="info-icon"><MapPin /></div>
-                  <div>
-                    <h4>Office</h4>
-                    <p>P.O.BOX. 350-20600</p>
-                    <p>MARALAL</p>
-                  </div>
-                </div>
-                
-                <div className="info-card">
-                  <div className="info-icon"><Clock /></div>
-                  <div>
-                    <h4>Response Times</h4>
-                    <p><strong>Phone:</strong> Immediate</p>
-                    <p><strong>WhatsApp:</strong> Under 15 minutes</p>
-                    <p><strong>Email:</strong> Under 2 hours</p>
-                  </div>
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', phone: '', service: 'safari', message: '' });
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }, 1500);
+  };
+
+  return (
+    <div className="contact-page">
+      <div className="contact-split">
+        {/* Left Side: Image & Info */}
+        <div className="contact-info-side reveal">
+          <div className="contact-overlay">
+            <p className="section-label">Get in Touch</p>
+            <h2 className="section-title">Let the <em>Journey</em> Begin</h2>
+            <p className="contact-lead">
+              Ready to explore East Africa? Whether you're booking a luxury safari or picking up outdoor gear, we are here to help.
+            </p>
+            
+            <div className="contact-details">
+              <div className="cd-item">
+                <span className="cd-icon">📍</span>
+                <div>
+                  <strong>Headquarters</strong>
+                  <p>Nairobi, Kenya</p>
                 </div>
               </div>
-              
-              <div className="escalation-note" style={{marginTop: '2rem', fontSize: '0.9rem', color: 'var(--text-light)'}}>
-                <p><strong>Escalation Path:</strong> Agent &rarr; Team Leader &rarr; Operations Manager</p>
+              <div className="cd-item">
+                <span className="cd-icon">📞</span>
+                <div>
+                  <strong>Call / WhatsApp</strong>
+                  <p><a href="tel:+254718804650">+254 718 804650</a></p>
+                </div>
+              </div>
+              <div className="cd-item">
+                <span className="cd-icon">✉️</span>
+                <div>
+                  <strong>Email Us</strong>
+                  <p><a href="mailto:info@tufiketours.com">info@tufiketours.com</a></p>
+                </div>
               </div>
             </div>
-
-            <div className="contact-form-wrap glass-card animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <h2>Send a Message</h2>
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                <div className="form-group">
-                  <label htmlFor="name">Full Name</label>
-                  <input type="text" id="name" placeholder="John Doe" />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
-                  <input type="email" id="email" placeholder="john@example.com" />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="service">Interested Service</label>
-                  <select id="service">
-                    <option>Local Trips & Expeditions</option>
-                    <option>Shared Group Trip Tickets</option>
-                    <option>Airbnb Facilitation</option>
-                    <option>Camping Experiences</option>
-                    <option>Merchandise Order</option>
-                    <option>Other Service</option>
-                  </select>
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="message">Message</label>
-                  <textarea id="message" rows="5" placeholder="Tell us about your travel plans..."></textarea>
-                </div>
-                
-                <button type="button" className="btn btn-primary w-full justify-center">
-                  Send Message
-                </button>
-              </form>
+            
+            <div className="social-links-contact mt-4">
+              <p style={{fontFamily: 'var(--font-heading)', color: 'var(--gold)', marginBottom: '.5rem'}}>Follow our expeditions</p>
+              <div className="social-links">
+                <a href="#" className="hover-target">f</a>
+                <a href="#" className="hover-target">📷</a>
+                <a href="https://wa.me/254718804650" className="hover-target">💬</a>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* Right Side: Form */}
+        <div className="contact-form-side reveal">
+          <div className="form-wrapper">
+            <h3>Send an Inquiry</h3>
+            <p className="form-sub">Fill out the form below and our travel experts will respond within 24 hours.</p>
+
+            {submitStatus === 'success' && (
+              <div className="alert-success">
+                Message sent successfully! We will contact you shortly.
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="tufike-form">
+              <div className="form-group">
+                <label htmlFor="name">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  className="form-control"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required 
+                  placeholder="e.g. Jane Doe"
+                />
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="email">Email Address *</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    className="form-control"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required 
+                    placeholder="you@example.com"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="phone">Phone / WhatsApp</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    className="form-control"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+254..."
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="service">I am interested in...</label>
+                <select 
+                  id="service" 
+                  name="service" 
+                  className="form-control"
+                  value={formData.service}
+                  onChange={handleChange}
+                >
+                  <option value="safari">Safari & Expeditions</option>
+                  <option value="camping">Camping Packages</option>
+                  <option value="marketplace">Marketplace & Merch</option>
+                  <option value="airbnb">Airbnb Facilitation</option>
+                  <option value="driver">Driver On Call</option>
+                  <option value="other">Other Inquiry</option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Message *</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  className="form-control"
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder="Tell us about your trip dates, group size, or merchandise needs..."
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                className="btn-primary hover-target w-100 mt-2" 
+                disabled={isSubmitting}
+                style={{ width: '100%' }}
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

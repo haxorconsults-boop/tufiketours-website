@@ -1,5 +1,4 @@
 import React from 'react';
-import { Ticket, ShoppingBag, ArrowRight, ShieldCheck, QrCode } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Marketplace.css';
 
@@ -28,84 +27,66 @@ const Marketplace = () => {
 
   return (
     <div className="marketplace-page">
-      {/* Header */}
-      <div className="page-header">
-        <div className="container">
-          <h1 className="animate-fade-up">Tufike Marketplace</h1>
-          <p className="page-subtitle animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            Your hub for shared group trip tickets and exclusive Bennie Culture merchandise.
-          </p>
-        </div>
+      <div className="market-header reveal">
+        <p className="section-label">Equip & Explore</p>
+        <h2 className="section-title">The Tufike <em>Marketplace</em></h2>
+        <p className="market-subtitle">Your hub for shared group trip tickets and exclusive Bennie Culture merchandise.</p>
       </div>
 
-      <div className="container section">
-        
-        {/* Ticket Marketplace Section */}
-        <div className="marketplace-section glass-card animate-fade-up">
-          <div className="section-header">
-            <Ticket size={40} className="section-icon" />
-            <div>
-              <h2>Shared Group Trip Tickets</h2>
-              <p>We partner with verified tour companies across East Africa to bring you affordable, shared group trips.</p>
-            </div>
+      {/* Ticket Section */}
+      <section className="market-section reveal">
+        <div className="market-card">
+          <div className="mc-header">
+            <h3>Shared Group Trip Tickets</h3>
+            <p>We partner with verified tour companies across East Africa to bring you affordable, shared group trips.</p>
           </div>
-          
-          <div className="ticket-features">
-            <div className="feature-item">
-              <ShieldCheck size={24} className="text-secondary" />
+          <div className="mc-features">
+            <div className="mc-feature">
+              <span className="mc-icon">🛡️</span>
               <h4>Verified Partners</h4>
-              <p>All trips are strictly vetted for your safety and comfort.</p>
+              <p>Strictly vetted for your safety and comfort.</p>
             </div>
-            <div className="feature-item">
-              <QrCode size={24} className="text-secondary" />
+            <div className="mc-feature">
+              <span className="mc-icon">🎟️</span>
               <h4>Personalized Tickets</h4>
-              <p>Receive a custom Tufike ticket with a unique QR code and itinerary.</p>
+              <p>Custom ticket with a unique QR code.</p>
             </div>
-            <div className="feature-item">
-              <Users size={24} className="text-secondary" />
+            <div className="mc-feature">
+              <span className="mc-icon">🤝</span>
               <h4>Travel Together</h4>
-              <p>Join existing trips to lower costs and make new friends.</p>
+              <p>Join existing trips to lower costs and make friends.</p>
             </div>
           </div>
-          
-          <div className="cta-box text-center">
-            <h3>Looking for available trips?</h3>
-            <p>Our trip inventory is constantly updating. Contact us to find a trip that matches your dates and destination!</p>
-            <Link to="/contact" className="btn btn-primary mt-4">Find a Trip <ArrowRight size={18} /></Link>
+          <div className="mc-cta text-center">
+            <p style={{marginBottom: '1.5rem'}}>Our trip inventory is constantly updating. Contact us to find a trip that matches your dates and destination!</p>
+            <Link to="/contact" className="btn-primary hover-target">Find a Trip</Link>
           </div>
         </div>
+      </section>
 
-        {/* Merchandise Section */}
-        <div className="marketplace-section glass-card animate-fade-up" style={{ animationDelay: '0.2s', marginTop: '4rem' }}>
-          <div className="section-header">
-            <ShoppingBag size={40} className="section-icon" />
-            <div>
-              <h2>Tufike Adventure Merchandise</h2>
-              <p>Join the <strong>Bennie Culture Initiative</strong> — an affordable, fashionable outdoor lifestyle identity for travel enthusiasts.</p>
-            </div>
+      {/* Merch Section */}
+      <section className="market-section reveal">
+        <div className="market-card border-gold">
+          <div className="mc-header">
+            <h3>Adventure Merchandise</h3>
+            <p>Join the <strong>Bennie Culture Initiative</strong> — an affordable, fashionable outdoor lifestyle identity.</p>
           </div>
-
           <div className="merch-grid">
             {merchandise.map((item, index) => (
-              <div key={index} className="merch-item">
+              <div key={index} className="merch-item hover-target">
                 <span className="merch-name">{item.name}</span>
                 <span className="merch-price">KES {item.price}</span>
               </div>
             ))}
           </div>
-          
-          <div className="text-center mt-4">
-            <p><em>* We deliver countrywide! Bulk customization is also available.</em></p>
-            <Link to="/contact" className="btn btn-outline mt-4">Order Merchandise</Link>
+          <div className="mc-cta text-center">
+            <p style={{marginBottom: '1.5rem', fontStyle: 'italic', color: 'var(--cream-dark)'}}>* We deliver countrywide! Bulk customization is also available.</p>
+            <Link to="/contact" className="btn-outline hover-target">Order Merchandise</Link>
           </div>
         </div>
-
-      </div>
+      </section>
     </div>
   );
 };
-
-// We need to import Users from lucide-react since we used it
-import { Users } from 'lucide-react';
 
 export default Marketplace;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -10,44 +9,51 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 60);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container nav-container">
-        <Link to="/" className="brand">
-          <img src="./logo.jpg" alt="Tufike Logo" className="brand-logo" />
+    <>
+      <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
+        <Link to="/" className="nav-logo hover-target">
+          <span>Tufike Tours</span>
+          <span>& Travels · Est. 2010</span>
         </Link>
-
-        <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-          <Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}>Services</Link>
-          <Link to="/tours" className={`nav-link ${location.pathname === '/tours' ? 'active' : ''}`}>Tours</Link>
-          <Link to="/marketplace" className={`nav-link ${location.pathname === '/marketplace' ? 'active' : ''}`}>Marketplace</Link>
-          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
-          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
-          <a href="tel:+254718804650" className="btn btn-primary nav-btn">
-            <Phone size={18} /> Call Us
-          </a>
-        </div>
-
+        <ul className="nav-links">
+          <li><Link to="/about" className="hover-target">About</Link></li>
+          <li><Link to="/services" className="hover-target">Services</Link></li>
+          <li><Link to="/tours" className="hover-target">Tours</Link></li>
+          <li><Link to="/marketplace" className="hover-target">Marketplace</Link></li>
+          <li><Link to="/contact" className="hover-target">Contact</Link></li>
+        </ul>
+        <a href="tel:+254718804650" className="nav-cta hover-target">📞 Book Now</a>
         <button 
-          className="mobile-menu-btn"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="hamburger hover-target" 
+          id="hamburger" 
+          aria-label="Menu"
+          onClick={() => setIsMobileMenuOpen(true)}
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          <span></span><span></span><span></span>
         </button>
+      </nav>
+
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`} id="mobileMenu">
+        <button className="mobile-close hover-target" onClick={() => setIsMobileMenuOpen(false)}>✕</button>
+        <Link to="/about" className="hover-target">About</Link>
+        <Link to="/services" className="hover-target">Services</Link>
+        <Link to="/tours" className="hover-target">Tours</Link>
+        <Link to="/marketplace" className="hover-target">Marketplace</Link>
+        <Link to="/contact" className="hover-target">Contact</Link>
+        <a href="tel:+254718804650" style={{ color: 'var(--gold)', fontSize: '1.1rem', fontFamily: 'var(--font-body)', letterSpacing: '.1em' }} className="hover-target">+254 718 804650</a>
       </div>
-    </nav>
+    </>
   );
 };
 

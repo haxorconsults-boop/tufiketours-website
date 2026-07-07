@@ -1,59 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Link to="/">
-              <img src="./logo.jpg" alt="Tufike Logo" className="footer-logo" />
-            </Link>
-            <p className="footer-desc">
-              Your premier corporate travel and ticketing partner in Kenya. Experience the wild heart of Africa with our curated safaris, and rely on our expertise for seamless corporate journeys.
-            </p>
-            <div className="social-links">
-              <a href="#" className="social-link">FB</a>
-              <a href="#" className="social-link">IG</a>
-              <a href="#" className="social-link">X</a>
-            </div>
-          </div>
-          
-          <div className="footer-links">
-            <h4 className="footer-title">Quick Links</h4>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/services">Our Services</Link></li>
-              <li><Link to="/marketplace">Marketplace</Link></li>
-              <li><Link to="/tours">Safaris & Tours</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
-            </ul>
-          </div>
-          
-          <div className="footer-contact">
-            <h4 className="footer-title">Contact Information</h4>
-            <div className="contact-item">
-              <MapPin className="contact-icon" size={20} />
-              <span>P.O.BOX. 350-20600, MARALAL</span>
-            </div>
-            <div className="contact-item">
-              <Phone className="contact-icon" size={20} />
-              <span>+254 718 804 650 (Peter Muiruru)</span>
-            </div>
-            <div className="contact-item">
-              <Mail className="contact-icon" size={20} />
-              <a href="mailto:tufiketours@gmail.com">tufiketours@gmail.com</a>
-            </div>
+    <footer>
+      <div className="footer-grid">
+        <div className="footer-brand">
+          <div className="logo">Tufike Tours</div>
+          <p>Africa's most trusted safari specialists, crafting extraordinary journeys across East Africa since 2010. Where every safari is a story waiting to be lived.</p>
+          <div className="social-links">
+            <a href="#" aria-label="Facebook" className="hover-target">f</a>
+            <a href="#" aria-label="Instagram" className="hover-target">📷</a>
+            <a href="https://wa.me/254718804650" aria-label="WhatsApp" className="hover-target">💬</a>
+            <a href="#" aria-label="YouTube" className="hover-target">▶</a>
           </div>
         </div>
-        
-        <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Tufike Tours & Travels. All rights reserved.</p>
+        <div className="footer-col">
+          <h4>Safaris</h4>
+          <ul>
+            <li><Link to="/services" className="hover-target">Big Five Safari</Link></li>
+            <li><Link to="/services" className="hover-target">Balloon Safari</Link></li>
+            <li><Link to="/services" className="hover-target">Mountain Trek</Link></li>
+            <li><Link to="/services" className="hover-target">Beach & Safari</Link></li>
+            <li><Link to="/services" className="hover-target">Cultural Safari</Link></li>
+          </ul>
         </div>
+        <div className="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><Link to="/tours" className="hover-target">Masai Mara, Kenya</Link></li>
+            <li><Link to="/tours" className="hover-target">Serengeti, Tanzania</Link></li>
+            <li><Link to="/tours" className="hover-target">Zanzibar</Link></li>
+            <li><Link to="/tours" className="hover-target">Amboseli</Link></li>
+            <li><Link to="/tours" className="hover-target">Bwindi, Uganda</Link></li>
+          </ul>
+        </div>
+        <div className="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><Link to="/about" className="hover-target">About Us</Link></li>
+            <li><Link to="/about" className="hover-target">Trust Guarantee</Link></li>
+            <li><Link to="/marketplace" className="hover-target">Marketplace</Link></li>
+            <li><Link to="/contact" className="hover-target">Contact</Link></li>
+            <li><a href="tel:+254718804650" className="hover-target">+254 718 804650</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>© {new Date().getFullYear()} Tufike Tours & Travels. All rights reserved. | Nairobi, Kenya</p>
+        <span>Crafted with ❤️ for Africa</span>
       </div>
     </footer>
   );
