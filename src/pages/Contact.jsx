@@ -44,7 +44,7 @@ const Contact = () => {
                 <span className="cd-icon">📞</span>
                 <div>
                   <strong>Call / WhatsApp</strong>
-                  <a href="tel:+254708037495">+254 708 037 495</a>
+                  <a href="tel:+254718804650">+254 718 804650</a>
                 </div>
               </div>
               <div className="cd-item">
@@ -64,7 +64,7 @@ const Contact = () => {
             </div>
 
             <div className="contact-whatsapp">
-              <a href="https://wa.me/254708037495?text=Hello%20Tufike%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." className="btn-primary hover-target" style={{marginTop: '2rem'}}>
+              <a href="https://wa.me/254718804650?text=Hello%20Tufike%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." className="btn-primary hover-target" style={{marginTop: '2rem'}}>
                 💬 Chat on WhatsApp
               </a>
             </div>
@@ -136,3 +136,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

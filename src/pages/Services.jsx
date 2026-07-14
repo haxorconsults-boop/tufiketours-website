@@ -117,7 +117,7 @@ const Services = () => {
         <h2>Ready to plan your next journey?</h2>
         <p>Our dedicated team builds every experience around your needs. Request a quotation today.</p>
         <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '2.5rem'}}>
-          <a href="https://wa.me/254708037495" className="btn-primary hover-target">WhatsApp Us</a>
+          <a href="https://wa.me/254718804650" className="btn-primary hover-target">WhatsApp Us</a>
           <Link to="/contact" className="btn-outline hover-target">Send Inquiry</Link>
         </div>
       </div>
@@ -126,3 +126,4 @@ const Services = () => {
 };
 
 export default Services;
+

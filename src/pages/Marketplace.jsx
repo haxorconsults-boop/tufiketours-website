@@ -63,7 +63,7 @@ const Marketplace = () => {
           <div className="mc-cta text-center">
             <p>Our trip inventory updates constantly. Contact us to find a departure that matches your dates and destination.</p>
             <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.5rem'}}>
-              <a href="https://wa.me/254708037495" className="btn-primary hover-target">WhatsApp for Tickets</a>
+              <a href="https://wa.me/254718804650" className="btn-primary hover-target">WhatsApp for Tickets</a>
               <Link to="/contact" className="btn-outline hover-target">Send Inquiry</Link>
             </div>
           </div>
@@ -95,7 +95,7 @@ const Marketplace = () => {
 
           <div className="mc-cta text-center" style={{marginTop: '3rem'}}>
             <p style={{fontStyle: 'italic', color: 'var(--cream-dark)'}}>Countrywide delivery available. Custom branding for groups, corporates and events.</p>
-            <a href="https://wa.me/254708037495?text=Hello%20Tufike%2C%20I%20want%20to%20order%20merchandise." className="btn-primary hover-target" style={{marginTop: '1.5rem'}}>
+            <a href="https://wa.me/254718804650?text=Hello%20Tufike%2C%20I%20want%20to%20order%20merchandise." className="btn-primary hover-target" style={{marginTop: '1.5rem'}}>
               Order via WhatsApp
             </a>
           </div>
@@ -106,3 +106,4 @@ const Marketplace = () => {
 };
 
 export default Marketplace;
+

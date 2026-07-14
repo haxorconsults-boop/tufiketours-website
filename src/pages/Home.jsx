@@ -199,7 +199,7 @@ const Home = () => {
             <p>Request a quotation → Receive itinerary → Confirm → Pay → Travel</p>
           </div>
           <div className="bs-actions">
-            <a href="https://wa.me/254708037495" className="btn-primary hover-target">WhatsApp Us</a>
+            <a href="https://wa.me/254718804650" className="btn-primary hover-target">WhatsApp Us</a>
             <Link to="/contact" className="btn-outline hover-target">Send Inquiry</Link>
           </div>
         </div>
@@ -210,3 +210,4 @@ const Home = () => {
 };
 
 export default Home;
+

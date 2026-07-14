@@ -11,7 +11,7 @@ const Footer = () => {
           <p className="footer-tagline">"Your destination is our priority."</p>
           <p>A Kenyan travel, tourism, transport and logistics company providing memorable experiences across East Africa since day one.</p>
           <div className="social-links">
-            <a href="https://wa.me/254708037495" aria-label="WhatsApp" className="hover-target">💬 WhatsApp</a>
+            <a href="https://wa.me/254718804650" aria-label="WhatsApp" className="hover-target">💬 WhatsApp</a>
             <a href="https://tiktok.com/@PeterTufike" aria-label="TikTok" className="hover-target">🎵 TikTok</a>
           </div>
         </div>
@@ -46,8 +46,8 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="tel:+254708037495" className="hover-target">+254 708 037 495</a></li>
-            <li><a href="https://wa.me/254708037495" className="hover-target">WhatsApp Us</a></li>
+            <li><a href="tel:+254718804650" className="hover-target">+254 718 804650</a></li>
+            <li><a href="https://wa.me/254718804650" className="hover-target">WhatsApp Us</a></li>
             <li><a href="mailto:info@tufiketours.com" className="hover-target">info@tufiketours.com</a></li>
             <li style={{color: 'var(--cream-dark)', fontSize: '.82rem', marginTop: '.5rem'}}>TikTok: @PeterTufike</li>
             <li style={{color: 'var(--cream-dark)', fontSize: '.82rem', marginTop: '.5rem'}}>Nairobi, Kenya</li>
@@ -63,3 +63,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
