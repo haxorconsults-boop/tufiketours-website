@@ -7,7 +7,9 @@ const Footer = () => {
     <footer>
       <div className="footer-grid">
         <div className="footer-brand">
-          <div className="logo">Tufike Tours<br />&amp; Travels</div>
+          <Link to="/" className="hover-target">
+            <img src="/logo.jpg" alt="Tufike Tours & Travels" className="footer-logo-img" />
+          </Link>
           <p className="footer-tagline">"Your destination is our priority."</p>
           <p>A Kenyan travel, tourism, transport and logistics company providing memorable experiences across East Africa since day one.</p>
           <div className="social-links">

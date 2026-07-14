@@ -23,8 +23,7 @@ const Navbar = () => {
     <>
       <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
         <Link to="/" className="nav-logo hover-target">
-          <span>Tufike Tours</span>
-          <span>& Travels · Est. 2010</span>
+          <img src="/logo.jpg" alt="Tufike Tours & Travels" className="nav-logo-img" />
         </Link>
         <ul className="nav-links">
           <li><Link to="/about" className="hover-target">About</Link></li>

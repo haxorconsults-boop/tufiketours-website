@@ -13,18 +13,15 @@ nav.scrolled {
   border-bottom: 1px solid rgba(200,151,58,.18);
 }
 .nav-logo {
-  display: flex; flex-direction: column; line-height: 1;
+  display: flex; align-items: center;
   text-decoration: none;
 }
-.nav-logo span:first-child {
-  font-family: var(--font-heading);
-  font-size: 1.55rem; font-weight: 900;
-  color: var(--gold); letter-spacing: .04em;
+.nav-logo-img {
+  height: 52px; width: auto; object-fit: contain;
+  transition: height .3s;
 }
-.nav-logo span:last-child {
-  font-family: var(--font-accent);
-  font-size: .7rem; letter-spacing: .35em;
-  color: var(--cream-dark); text-transform: uppercase;
+nav.scrolled .nav-logo-img {
+  height: 42px;
 }
 .nav-links {
   display: flex; gap: 2.5rem; list-style: none;
