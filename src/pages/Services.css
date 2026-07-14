@@ -1,107 +1,84 @@
-.services-page {
-  padding-top: 120px;
-  background: var(--dark);
-}
+.services-page { padding-top: 120px; background: var(--dark); }
+
 .services-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 5rem;
-  padding: 0 5%;
+  text-align: center; max-width: 820px; margin: 0 auto 5rem; padding: 0 5%;
 }
 .services-subtitle {
-  font-family: var(--font-accent);
-  font-size: 1.3rem;
-  color: var(--cream-dark);
-  margin-top: 1.5rem;
+  font-family: var(--font-accent); font-size: 1.3rem;
+  color: var(--cream-dark); margin-top: 1.5rem; line-height: 1.6;
 }
 
+/* Editorial number grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 0 5%;
-  margin-bottom: 6rem;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 2px; /* editorial tight grid */
+  padding: 0;
+  margin-bottom: 0;
+  border-top: 1px solid var(--rule);
 }
 
 .srv-card {
-  position: relative;
-  height: 400px;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid rgba(200,151,58,.1);
-  transition: transform .4s, border-color .4s, box-shadow .4s;
+  position: relative; height: 420px; overflow: hidden;
+  transition: transform .4s, box-shadow .4s;
 }
 .srv-card img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  transition: transform .6s, filter .6s;
-  filter: brightness(0.6) grayscale(20%);
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; transition: transform .6s, filter .6s;
+  filter: brightness(.55) grayscale(15%);
 }
 .srv-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(26,15,5,.95) 0%, rgba(26,15,5,.4) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(26,15,5,.97) 0%, rgba(26,15,5,.45) 55%, transparent 100%);
   display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.8rem;
   transition: background .4s;
 }
+/* editorial issue number */
+.srv-num {
+  position: absolute; top: 1.2rem; right: 1.5rem;
+  font-family: var(--font-heading); font-size: .75rem; font-weight: 700;
+  color: rgba(200,151,58,.4); letter-spacing: .1em;
+  transition: color .4s;
+}
 .srv-icon {
-  font-size: 2rem; margin-bottom: 1rem;
-  transform: translateY(20px); opacity: 0;
+  font-size: 1.8rem; margin-bottom: .8rem;
+  transform: translateY(16px); opacity: 0;
   transition: transform .4s ease, opacity .4s ease;
 }
 .srv-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem; font-weight: 700; color: var(--gold);
-  line-height: 1.2; margin-bottom: .5rem;
-  transform: translateY(10px);
-  transition: transform .4s ease;
+  font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700;
+  color: var(--gold); line-height: 1.2; margin-bottom: .5rem;
+  transform: translateY(8px); transition: transform .4s ease, color .4s;
 }
 .srv-desc {
-  font-size: .85rem; color: var(--cream);
-  line-height: 1.6; margin-bottom: 1rem;
-  height: 0; opacity: 0; overflow: hidden;
+  font-size: .83rem; color: var(--cream); line-height: 1.65;
+  margin-bottom: .8rem; height: 0; opacity: 0; overflow: hidden;
   transition: height .4s ease, opacity .4s ease;
 }
 .srv-tag {
-  font-family: var(--font-accent);
-  font-size: .9rem; color: var(--cream-dark); font-style: italic;
-  display: block;
+  font-family: var(--font-accent); font-size: .88rem;
+  color: var(--cream-dark); font-style: italic;
 }
 
-.srv-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(200,151,58,.4);
-  box-shadow: 0 15px 40px rgba(0,0,0,.5);
-}
-.srv-card:hover img {
-  transform: scale(1.08);
-  filter: brightness(0.4) grayscale(0%);
-}
-.srv-card:hover .srv-overlay {
-  background: rgba(26,15,5,.85);
-}
-.srv-card:hover .srv-icon {
-  transform: translateY(0); opacity: 1;
-}
-.srv-card:hover .srv-title {
-  transform: translateY(0); color: var(--white);
-}
-.srv-card:hover .srv-desc {
-  height: 120px; opacity: 1;
-}
+.srv-card:hover { transform: scale(1.01); box-shadow: 0 20px 50px rgba(0,0,0,.6); }
+.srv-card:hover img { transform: scale(1.08); filter: brightness(.4); }
+.srv-card:hover .srv-overlay { background: rgba(26,15,5,.88); }
+.srv-card:hover .srv-num { color: var(--gold); }
+.srv-card:hover .srv-icon { transform: translateY(0); opacity: 1; }
+.srv-card:hover .srv-title { transform: translateY(0); color: var(--white); }
+.srv-card:hover .srv-desc { height: 130px; opacity: 1; }
 
 .services-cta {
-  text-align: center;
-  background: var(--earth);
-  padding: 5rem 5%;
-  border-top: 1px solid rgba(200,151,58,.15);
-  border-bottom: 1px solid rgba(200,151,58,.15);
+  text-align: center; background: var(--earth); padding: 6rem 5%;
+  border-top: 1px solid var(--rule);
 }
 .services-cta h2 {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  color: var(--white);
-  margin-bottom: 1rem;
+  font-family: var(--font-heading); font-size: 2.5rem;
+  color: var(--white); margin-bottom: 1rem;
 }
-.services-cta p {
-  color: var(--cream-dark);
+.services-cta p { color: var(--cream-dark); font-size: 1.05rem; }
+
+@media (max-width: 680px) {
+  .services-grid { grid-template-columns: 1fr; gap: 2px; }
 }

@@ -28,60 +28,76 @@ const Marketplace = () => {
   return (
     <div className="marketplace-page">
       <div className="market-header reveal">
-        <p className="section-label">Equip & Explore</p>
+        <span className="section-label">Shop & Book</span>
         <h2 className="section-title">The Tufike <em>Marketplace</em></h2>
-        <p className="market-subtitle">Your hub for shared group trip tickets and exclusive Bennie Culture merchandise.</p>
+        <p className="market-subtitle">
+          Your hub for shared group trip tickets and exclusive Bennie Culture adventure merchandise.
+        </p>
       </div>
 
-      {/* Ticket Section */}
+      {/* ── EVENT TICKETING ── */}
       <section className="market-section reveal">
         <div className="market-card">
           <div className="mc-header">
+            <span className="mc-badge">Event Ticketing</span>
             <h3>Shared Group Trip Tickets</h3>
-            <p>We partner with verified tour companies across East Africa to bring you affordable, shared group trips.</p>
+            <p>We sell tickets for Tufike-organized events and vetted partner events across East Africa. Every ticket is personalized with a unique QR code and detailed itinerary.</p>
           </div>
           <div className="mc-features">
             <div className="mc-feature">
               <span className="mc-icon">🛡️</span>
-              <h4>Verified Partners</h4>
-              <p>Strictly vetted for your safety and comfort.</p>
+              <h4>Verified Partners Only</h4>
+              <p>Business registration, physical address, license, insurance and references — all checked before listing.</p>
             </div>
             <div className="mc-feature">
               <span className="mc-icon">🎟️</span>
               <h4>Personalized Tickets</h4>
-              <p>Custom ticket with a unique QR code.</p>
+              <p>Receive a custom Tufike ticket with a unique QR code and full itinerary — professional and genuine.</p>
             </div>
             <div className="mc-feature">
               <span className="mc-icon">🤝</span>
               <h4>Travel Together</h4>
-              <p>Join existing trips to lower costs and make friends.</p>
+              <p>Join existing scheduled departures to lower costs and make new friends along the road.</p>
             </div>
           </div>
           <div className="mc-cta text-center">
-            <p style={{marginBottom: '1.5rem'}}>Our trip inventory is constantly updating. Contact us to find a trip that matches your dates and destination!</p>
-            <Link to="/contact" className="btn-primary hover-target">Find a Trip</Link>
+            <p>Our trip inventory updates constantly. Contact us to find a departure that matches your dates and destination.</p>
+            <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.5rem'}}>
+              <a href="https://wa.me/254708037495" className="btn-primary hover-target">WhatsApp for Tickets</a>
+              <Link to="/contact" className="btn-outline hover-target">Send Inquiry</Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Merch Section */}
-      <section className="market-section reveal">
+      {/* ── BENNIE CULTURE MERCH ── */}
+      <section className="market-section reveal" style={{paddingTop: 0}}>
         <div className="market-card border-gold">
           <div className="mc-header">
+            <span className="mc-badge" style={{background: 'var(--gold)', color: 'var(--dark)'}}>Bennie Culture Initiative</span>
             <h3>Adventure Merchandise</h3>
-            <p>Join the <strong>Bennie Culture Initiative</strong> — an affordable, fashionable outdoor lifestyle identity.</p>
+            <p>An affordable, fashionable outdoor lifestyle identity for travel enthusiasts across Kenya. We deliver countrywide — bulk customization available.</p>
           </div>
-          <div className="merch-grid">
-            {merchandise.map((item, index) => (
-              <div key={index} className="merch-item hover-target">
+
+          {/* Editorial price table */}
+          <div className="merch-table">
+            <div className="mt-head">
+              <span>Item</span>
+              <span>Price (KES)</span>
+            </div>
+            {merchandise.map((item, i) => (
+              <div key={i} className="merch-row hover-target">
                 <span className="merch-name">{item.name}</span>
                 <span className="merch-price">KES {item.price}</span>
               </div>
             ))}
           </div>
-          <div className="mc-cta text-center">
-            <p style={{marginBottom: '1.5rem', fontStyle: 'italic', color: 'var(--cream-dark)'}}>* We deliver countrywide! Bulk customization is also available.</p>
-            <Link to="/contact" className="btn-outline hover-target">Order Merchandise</Link>
+
+          <div className="mc-cta text-center" style={{marginTop: '3rem'}}>
+            <p style={{fontStyle: 'italic', color: 'var(--cream-dark)'}}>Countrywide delivery available. Custom branding for groups, corporates and events.</p>
+            <a href="https://wa.me/254708037495?text=Hello%20Tufike%2C%20I%20want%20to%20order%20merchandise." className="btn-primary hover-target" style={{marginTop: '1.5rem'}}>
+              Order via WhatsApp
+            </a>
           </div>
         </div>
       </section>
